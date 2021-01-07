@@ -72,3 +72,5 @@ gem 'i18n_generators'
 
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'geocoder'
+gem 'dotenv-rails'
