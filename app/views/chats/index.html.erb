@@ -1,0 +1,6 @@
+<h1>チャット</h1>
+<%= render "chats/chat", {chat: @chat, room: @room} %>
+<% @chats.each do |chat| %>
+<%= chat.user.name %>
+<%= chat.message %>
+<% end %>

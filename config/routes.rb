@@ -7,7 +7,12 @@ Rails.application.routes.draw do
     end
   end
   resource :relationships, only: [:create, :destroy]
-  resources :rooms, except: [:destroy]
+  resources :rooms, except: [:destroy] do
+    member do 
+      resources :chats, only: [:index, :create]
+    end
+  end
+  
   root to: "homes#top"
   get 'home/about' => 'homes#about'
 end
