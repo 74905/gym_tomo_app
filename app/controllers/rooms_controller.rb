@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
   end
   
   def index
-    @rooms = Room.all
+    @rooms = Room.page(params[:page]).reverse_order
   end
   
   def show
