@@ -1,7 +1,8 @@
-<%= form_with model: chat, local: true do |f| %>
-  <%= f.text_field :message %>
-  <%= f.hidden_field :room_id, :value => room.id %>
-  <%= f.submit "送信" %>
-  <% end %>
+
+<div class="message">
+  <%= attachment_image_tag chat.user, :profile_image, format: 'png', fallback: "noimage", size: "40x40" %>
+  <%= chat.user.name %>
+ <%= simple_format(chat.message) %>
+</div>
   
   

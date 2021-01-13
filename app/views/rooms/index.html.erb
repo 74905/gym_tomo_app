@@ -1,4 +1,6 @@
 <% @rooms.each do |room| %>
-<%= room.name %>
-<%= room.address %>
+<div><%= link_to room_path(room.id) do %>
+ <%= room.name %>
+ <%= room.address %>
+<% end %></div>
 <% end %>

@@ -1,7 +1,7 @@
 
 <h2>住所</h2>
 <%= @room.address %>
-
+<%= attachment_image_tag @room, :image, format: 'png', fallback: "noimage", size: "300x300" %>
 <div id="map"></div>
 <%= link_to "チャットに参加", chats_path %>
 

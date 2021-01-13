@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resource :relationships, only: [:create, :destroy]
   resources :rooms, except: [:destroy] do
     member do 
-      resources :chats, only: [:index, :create]
+      resources :chats, only: [:index]
     end
   end
   
