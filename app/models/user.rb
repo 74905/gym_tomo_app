@@ -27,5 +27,7 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
-
+  def is_member?(room_id)
+    Room.find(room_id).users.exists?(self.id)
+  end
 end

@@ -3,7 +3,6 @@
      <div class="col-lg-7">
       <h3>新規会員登録</h3>
 
-
       <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -38,3 +37,13 @@
   </div>
 
 <%= render "devise/shared/links" %>
+
+   <script>
+// let referrer = window.referrer;
+if (window.referrer == "https://d1b32d4265c3494e8f454eec97746243.vfs.cloud9.ap-northeast-1.amazonaws.com/users/sign_up") {
+  Turbolinks.visit('/users/sign_up');
+  window.referrer == "";
+};
+// console.log(referrer);
+  // Turbolinks.visit(location.toString());
+   </script>
