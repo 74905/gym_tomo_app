@@ -3,7 +3,7 @@
          <% @rooms.each do |room| %>
          <div class="col-4 mt-3">
           <div class="card" style="width: 18rem;">
-           <%= attachment_image_tag room, :image, format: 'png', fallback: "noimage", size: "286x180" %>
+           <%= attachment_image_tag room, :image, format: 'png', fallback: "noimage.", size: "286x180" %>
             <div class="card-body">
              <h5 class="card-title"><%= room.name %></h5>
               <p class="card-text">
