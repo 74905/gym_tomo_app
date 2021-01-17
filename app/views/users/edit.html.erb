@@ -1,0 +1,18 @@
+<h1>編集ページ</h1>
+
+<%= form_with model: @user, local:true do |f| %>
+ <div class="col-4 mx-auto mb-4">
+   <%= attachment_image_tag @user, :profile_image, format: 'png', fallback: "noimage", size: "400x400" %>
+ </div>
+  <div class="col-4 mx-auto mb-2">
+　　<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class:"btn btn-light" %>
+　</div>
+<div class="card mx-5 text-center">
+  <div class="card-header">ニックネーム：<%= f.text_field :name %></div>
+   <div class="card-body">
+    <h5 class="card-title">自己紹介文(編集)</h5>
+     <p class="card-text"><%= f.text_area :introduction, class:"form-control" %></p>
+      <%= f.submit "変更を保存", class: "btn btn-info" %>
+ <% end %>
+   </div>
+</div>
