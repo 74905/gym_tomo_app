@@ -1,0 +1,29 @@
+// Place all the styles related to the chats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.chat_box{
+  width: 100%;
+  height: 500px;
+  padding: 10px;
+  margin-top: 10px;
+  // margin: 0, auto;
+  // max-width: 500px;
+  overflow: scroll;
+  border: blue 1px solid;
+}
+
+
+#outer_box {
+  position: relative;
+  height: 300px;
+}
+
+#message_hoge {
+  position: absolute;
+  width: 600px;
+  bottom: 0px;
+  line-height: 20px;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+}
