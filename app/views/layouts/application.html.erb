@@ -4,9 +4,10 @@
     <title>GymTomo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
@@ -16,5 +17,10 @@
       <footer class="text-dark">
       <p class="mx-auto">© ジムトレ</p>
       </footer>
+    <script>
+    document.addEventListener('turbolinks:before-visit', () => {
+    window.referrer = window.location.href;
+    }, false);
+    </script>
   </body>
 </html>
