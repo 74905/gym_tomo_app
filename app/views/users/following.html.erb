@@ -1,0 +1,4 @@
+<% @users.each do |user| %>
+<%= attachment_image_tag user, :profile_image, format: 'png', fallback: "noimage", size: "50x50" %>
+<%= user.name %>
+<% end %>

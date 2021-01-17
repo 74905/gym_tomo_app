@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+         <% @rooms.each do |room| %>
+         <div class="col-4 mt-3">
+          <div class="card" style="width: 18rem;">
+           <%= attachment_image_tag room, :image, format: 'png', fallback: "noimage", size: "286x180" %>
+            <div class="card-body">
+             <h5 class="card-title"><%= room.name %></h5>
+              <p class="card-text">
+                <%= room.address %></br>
+                <%= room.phone_number %>
+              </p>
+            <%= link_to "詳細画面", room_path(room.id), class:"btn btn-info" %>
+            </div>
+          </div>
+         </div>
+         <% end %>
+ </div>
+ <div class="row"> 
+ <%= paginate @rooms %>
+ </div>
+</div>
