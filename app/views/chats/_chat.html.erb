@@ -1,6 +1,6 @@
 
 <div class="message_<%= chat.id %>">
-  <%= attachment_image_tag chat.user, :profile_image, format: 'png', fallback: "noimage", size: "40x40" %>
+  <%= attachment_image_tag chat.user, :profile_image, format: 'png', fallback: "noimage.png", size: "40x40" %>
   <%= chat.user.name %>
  <%= simple_format(chat.message) %>
  <!--<<%# if chat.user == current_user %>-->
