@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     member do 
       resources :chats, only: [:index]
     end
-   mount ActionCable.server => '/cable'
+   get :searchs, on: :collection
   end
-  
+  mount ActionCable.server => '/cable'
   root to: "homes#top"
   get 'home/about' => 'homes#about'
 end

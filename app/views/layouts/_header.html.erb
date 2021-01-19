@@ -25,6 +25,12 @@
                 <li class="nav-item">
                   <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary fas fa-user nav-link text-white' %>
                 </li>
+                 <li>
+                   <%= form_with url: searchs_rooms_path, method: :get, local:true do |f| %>
+                    <%= f.text_field :search, :placeholder =>"ジムを検索" %>
+                    <%= f.submit "検索", class:"btn btn-info" %>
+                    <% end %>
+                 </li>
                 <% else %>
                  <li class="nav-item">
                    <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-outline-secondary fas fa-user nav-link text-white' %>

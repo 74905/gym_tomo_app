@@ -5,8 +5,11 @@ class RoomsController < ApplicationController
   
   def create
     @room = Room.new(room_params)
-    @room.save
-    redirect_to room_path(@room.id)
+    if @room.save
+      redirect_to room_path(@room.id)
+    else
+      render :new
+    end
   end
   
   def index
@@ -15,6 +18,12 @@ class RoomsController < ApplicationController
   
   def show
     @room = Room.find(params[:id])
+  end
+  
+  def searchs
+    @search = params[:search]
+    rooms = Room.search(params[:search])
+    @rooms = rooms.page(params[:page]).reverse_order
   end
   
 end

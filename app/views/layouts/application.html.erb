@@ -14,13 +14,19 @@
     <%= render "layouts/header" %>
     <%= yield %>
     
-      <footer class="text-dark">
-      <p class="mx-auto">© ジムトレ</p>
+      <footer class="text-dark border-top">
+       <div class="container mt-5">
+         <div class="row">
+           <div class="mx-auto">
+              <p>© ジムトレ</p>
+            </div>
+         </div>
+      </div>
       </footer>
     <script>
-    document.addEventListener('turbolinks:before-visit', () => {
-    window.referrer = window.location.href;
-    }, false);
+    // document.addEventListener('turbolinks:before-visit', () => {
+    // window.referrer = window.location.href;
+    // }, false);
     </script>
   </body>
 </html>
