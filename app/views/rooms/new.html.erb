@@ -3,6 +3,7 @@
   <div class="row">
     　<div class="col-12 mx-auto">
         <%= form_with model: @room, local:true  do |f| %>
+         <%= render "layouts/error_message", model: f.object %>
          <div class="field">
            <%= f.label"ジム名" %><br />
            <%= f.text_field :name, class:"form-control ml-2", :placeholder =>"(例)○○ジム" %>
