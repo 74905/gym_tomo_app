@@ -26,6 +26,11 @@ class RoomsController < ApplicationController
     @rooms = rooms.page(params[:page]).reverse_order
   end
   
+  def participants
+    @room = Room.find(params[:id])
+    @user_rooms = @room.user_rooms
+  end 
+  
 end
 
 private

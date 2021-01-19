@@ -11,4 +11,10 @@ class ChatChannel < ApplicationCable::Channel
       #ActionCable.server.broadcast 'chat_channel', chat: data['chat']
       Chat.create! message: data['chat'], user_id: current_user.id, room_id: params['room_id']
   end
+  
+  def delete(data)
+    ActionCable.server.broadcast'chat_channel', id: data['id']
+    chat = Chat.find(id: data['id'])
+    chat.destroy
+  end 
 end

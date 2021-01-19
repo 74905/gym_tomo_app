@@ -13,8 +13,8 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end 
   def following
-    user = current_user
-    @users = user.following
+    @user = current_user
+    @users = @user.following
   end
   
   private 

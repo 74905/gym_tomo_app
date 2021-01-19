@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :chats, only: [:index]
     end
    get :searchs, on: :collection
+   get :participants, on: :member
   end
   mount ActionCable.server => '/cable'
   root to: "homes#top"

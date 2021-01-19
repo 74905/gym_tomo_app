@@ -1,5 +1,8 @@
 <div class="container">
     <!--<div class="row">-->
+ <div><%= link_to participants_room_path(@room.id) do %>
+      参加人数<%= @room.user_rooms.count %>
+     <% end %></div>
  <div id="messages", data-room_id="<%= @room.id %>"></div>
  <div class="chat_box">
  <div id="chats">
