@@ -12,7 +12,7 @@ document.addEventListener 'turbolinks:load', ->
     # $(id).remove()
   speak: (chat) ->
     @perform 'speak', chat: chat
-  
+    #現状アクションを増やすことはできないことが
     # Viewの'[data-behavior~=chat_speaker]'内のtextを引数に実行される
    # eventはここでは'[data-behavior~=chat_speaker]'にあたる
    $(document).on 'keydown', '[data-behavior~=chat_speaker]', (event) ->
@@ -29,7 +29,4 @@ document.addEventListener 'turbolinks:load', ->
     App.chat.speak $('[data-behavior~=chat_speaker]').val()
     $('[data-behavior~=chat_speaker]').val('')
     event.preventDefault()
-　delete: (id)->
-   @perform 'delete', id: id
-　 $(document).on 'click', '.delete-btn', (event) ->
-    App.chat.delete event.target.id
+    

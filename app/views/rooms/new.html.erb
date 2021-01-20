@@ -1,42 +1,44 @@
-<div class="container">
-   <h1>ジム作成フォーム</h1>
-  <div class="row">
-    　<div class="col-12 mx-auto">
-        <%= form_with model: @room, local:true  do |f| %>
-         <%= render "layouts/error_message", model: f.object %>
-         <div class="field">
-           <%= f.label"ジム名" %><br />
-           <%= f.text_field :name, class:"form-control ml-2", :placeholder =>"(例)○○ジム" %>
-         </div>
-         
-         <div class="field">
-           <%= f.label"ジム画像" %><br />
-           <%= f.attachment_field :image, class:"btn btn-light ml-2" %>
-         </div>
-         
-         <div class="field">
-           <%= f.label"ジム説明" %><br />
-           <%= f.text_area :introduction, class:"form-control ml-2", :placeholder =>"ジムの特徴などあればお書き下さい！(例)器具の種類や営業時間等" %>
-         </div>
-         
-         <div class="field">
-           <%= f.label"郵便番号" %><br />
-           <%= f.text_field :zipcode, class:"form-control ml-2", :placeholder =>"ハイフンなし" %>
-         </div>
-         
-         <div class="field">
-           <%= f.label"住所" %><br />
-           <%= f.text_field :address, class:"form-control ml-2", :placeholder =>"(例)東京都新宿区丸ノ内1-2 森ビル　6F" %>
-         </div>
-         
-         <div class="field">
-         <%= f.label"電話番号" %><br />
-         <%= f.text_field :phone_number, class:"form-control ml-2", :placeholder =>"市街局番からお書き下さい(ハイフンあり)"  %>
-         </div>
-         
-         <div class="actions col-5 mt-2 mx-auto">
-           <%= f.submit "作成", class:"btn btn-success btn-block"%>
-           <% end %>
-         </div>
+ <main class="new-main">
+  <div class="container">
+     <h1>ジム作成フォーム</h1>
+    <div class="row">
+      　<div class="col-12 mx-auto">
+          <%= form_with model: @room, local:true  do |f| %>
+           <%= render "layouts/error_message", model: f.object %>
+           <div class="field">
+             <%= f.label"ジム名" %><br />
+             <%= f.text_field :name, class:"form-control ml-2", :placeholder =>"(例)○○ジム" %>
+           </div>
+           
+           <div class="field">
+             <%= f.label"ジム画像" %><br />
+             <%= f.attachment_field :image, class:"btn btn-light ml-2" %>
+           </div>
+           
+           <div class="field">
+             <%= f.label"ジム説明" %><br />
+             <%= f.text_area :introduction, class:"form-control ml-2", :placeholder =>"ジムの特徴などあればお書き下さい！(例)器具の種類や営業時間等" %>
+           </div>
+           
+           <div class="field">
+             <%= f.label"郵便番号" %><br />
+             <%= f.text_field :zipcode, class:"form-control ml-2", :placeholder =>"ハイフンなし" %>
+           </div>
+           
+           <div class="field">
+             <%= f.label"住所" %><br />
+             <%= f.text_field :address, class:"form-control ml-2", :placeholder =>"(例)東京都新宿区丸ノ内1-2 森ビル　6F" %>
+           </div>
+           
+           <div class="field">
+           <%= f.label"電話番号" %><br />
+           <%= f.text_field :phone_number, class:"form-control ml-2", :placeholder =>"市街局番からお書き下さい(ハイフンあり)"  %>
+           </div>
+           
+           <div class="actions col-5 mt-2 mx-auto">
+             <%= f.submit "作成", class:"btn btn-success btn-block"%>
+             <% end %>
+           </div>
+      </div>
     </div>
-  </div>
+ </main>

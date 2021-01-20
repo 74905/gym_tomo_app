@@ -1,27 +1,27 @@
 <div class="container">
-    <!--<div class="row">-->
- <div><%= link_to participants_room_path(@room.id) do %>
-      参加人数<%= @room.user_rooms.count %>
-     <% end %></div>
- <div id="messages", data-room_id="<%= @room.id %>"></div>
- <div class="chat_box">
- <div id="chats">
-   <%= render @chats %>
- </div>
- </div>
-<!--</div>-->
-<div class="row">
-  <div class="col-8">
-     <div id="outer_box">
-         <div class="form-group">
-        <%= text_area :message, "hoge", 'data-behavior': 'chat_speaker', class: 'from-control', style: 'margin-bottom: 20px; width: 100%;' %>
-        </div>
+  <h2 style="text-align: center; margin-top: 3px;"><%= @room.name %>のチャットルーム</h2> 
+     <div style="text-align: right;"><%= link_to participants_room_path(@room.id), class:"btn btn-primary" do %>
+          参加人数<%= @room.user_rooms.count %>
+         <% end %>
      </div>
-  </div>
- </div>
+       <div id="messages", data-room_id="<%= @room.id %>"></div>
+     <div class="chat_box">
+      <div id="chats">
+       <%= render @chats %>
+      </div>
+     </div>
     <div class="row">
-        <div class="col-8">
-          <%= button_tag '送信', class: 'chat_submit btn btn-info btn-block' %>
+      <div class="col-8">
+         <div id="outer_box">
+             <div class="form-group">
+            <%= text_area :message, "hoge", 'data-behavior': 'chat_speaker', class: 'from-control', style: 'margin-bottom: 20px; width: 100%;' %>
+            </div>
+         </div>
+      </div>
+     </div>
+        <div class="row">
+            <div class="col-8">
+              <%= button_tag 'コメントを送信', class: 'chat_submit btn btn-info btn-block' %>
+            </div>
         </div>
-    </div>
 </div>

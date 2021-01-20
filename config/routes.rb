@@ -8,9 +8,7 @@ Rails.application.routes.draw do
   end
   resource :relationships, only: [:create, :destroy]
   resources :rooms, except: [:destroy] do
-    member do 
-      resources :chats, only: [:index]
-    end
+      resources :chats, only: [:index, :destroy]
    get :searchs, on: :collection
    get :participants, on: :member
   end
