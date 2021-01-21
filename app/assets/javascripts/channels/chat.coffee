@@ -13,23 +13,25 @@ document.addEventListener 'turbolinks:load', ->
   speak: (chat) ->
     @perform 'speak', chat: chat
   
-    # Viewの'[data-behavior~=chat_speaker]'内のtextを引数に実行される
-   # eventはここでは'[data-behavior~=chat_speaker]'にあたる
-   $(document).on 'keydown', '[data-behavior~=chat_speaker]', (event) ->
-    # Ctrl + returnキーを押すとここで上のApp.roomの:speakが呼ばれる
-    if event.ctrlKey && event.keyCode is 13
-      # 引数eventのvalueをspeakアクションに渡す
-      App.chat.speak event.target.value
-      # eventのvalueを初期化
-      event.target.value = ''
-      # 中身をsubmitしない
-      event.preventDefault()
-      
-   $(document).on 'click', '.chat_submit', ->
-    App.chat.speak $('[data-behavior~=chat_speaker]').val()
-    $('[data-behavior~=chat_speaker]').val('')
+  # $(document).on 'keypress', '[data-behavior~=chat_speaker]', (event) ->
+  # if event.keyCode is 13 # return = send
+  #   App.chat.speak event.target.value
+  #   event.target.value = ''
+  #   event.preventDefault()
+  
+  # Viewの'[data-behavior~=room_speaker]'内のtextを引数に実行される
+# eventはここでは'[data-behavior~=room_speaker]'にあたる
+$(document).on 'keydown', '[data-behavior~=chat_speaker]', (event) ->
+  # Ctrl + returnキーを押すとここで上のApp.roomの:speakが呼ばれる
+  if event.ctrlKey && event.keyCode is 13
+    # 引数eventのvalueをspeakアクションに渡す
+    App.chat.speak event.target.value
+    # eventのvalueを初期化
+    event.target.value = ''
+    # 中身をsubmitしない
     event.preventDefault()
-　delete: (id)->
-   @perform 'delete', id: id
-　 $(document).on 'click', '.delete-btn', (event) ->
-    App.chat.delete event.target.id
+    
+$(document).on 'click', '.chat_submit', ->
+  App.chat.speak $('[data-behavior~=chat_speaker]').val()
+  $('[data-behavior~=chat_speaker]').val('')
+  event.preventDefault()
