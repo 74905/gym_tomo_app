@@ -6,6 +6,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     if @room.save
+      flash[:notice] = "ジムが作成されました！"
       redirect_to room_path(@room.id)
     else
       render :new

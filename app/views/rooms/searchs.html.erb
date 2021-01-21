@@ -1,10 +1,11 @@
+<main class="index-main">
 <div class="container">
-  <div class="row">
     <h2><%= @search %>の検索結果は<%= @rooms.count %>件です</h2>
     <% if @rooms.count == 0 %>
        <p>ジムが作成されていないかもしれません!</br>
           是非ジムを登録してみましょう!</p>
     <% end %>
+  <div class="row">
          <% @rooms.each do |room| %>
          <div class="col-4 mt-3">
           <div class="card" style="width: 18rem;">
@@ -25,3 +26,4 @@
  <%= paginate @rooms %>
  </div>
 </div>
+</main>

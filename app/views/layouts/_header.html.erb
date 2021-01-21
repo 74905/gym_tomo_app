@@ -1,45 +1,47 @@
-<header class="header">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ma-auto">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          
-           <ul class="navbar-nav">
-                <!--会員がログインしたとき-->
-                <% if user_signed_in? %>
-                <p class="fas fa-bell", style="color:#F5F5F5"> ようこそ、<strong><%= current_user.name %></strong> さん！</p>
-                <li class="nav-item">
-                    <%= link_to "フォロー一覧", following_user_path(current_user), class: 'btn btn-outline-secondary fas fa-users nav-link text-white' %>
-                </li>
-                <li class="nav-item">
-                    <%= link_to "マイページ", user_path(current_user), class: 'btn btn-outline-secondary fas fa-user nav-link text-white' %>
-                </li>
-                  <li class="nav-item">
-                    　<%=link_to "ジム作成", new_room_path, class: 'btn btn-outline-secondary fas fa-plus-square nav-link text-white' %>
-                  </li>
-                   <li class="nav-item">
-                     <%= link_to "ジム一覧", rooms_path, class: 'btn btn-outline-secondary fas fa-dumbbell nav-link text-white' %>
-                   </li>
-                <li class="nav-item">
-                  <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary fas fa-sign-out-alt nav-link text-white' %>
-                </li>
-                 <li>
-                   <%= form_with url: searchs_rooms_path, method: :get, local:true do |f| %>
-                    <%= f.text_field :search, :placeholder =>"ジムを検索" %>
-                    <%= f.submit "検索", class:"btn btn-info" %>
-                    <% end %>
-                 </li>
-                <% else %>
-                 <li class="nav-item">
-                   <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-outline-secondary fas fa-user nav-link text-white' %>
-                 </li>
-                  <li class="nav-item">
-                    <%= link_to "ログイン", new_user_session_path, class: 'btn btn-outline-secondary fas fa-user nav-link text-white' %>
-                  </li>
-                <% end %>
-           </ul>
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="logo col-xs-12">
+                      <%= image_tag 'logo.png', :size => '150x75' %>
+                   </div>
+                </div>
+            </div>
         </div>
-    </nav>
-</header>
+        <div class="headerNav">
+            <div class="container">
+                <div class="row headerNavBox">
+                    <!--会員がログインしたとき-->
+                    <% if user_signed_in? %>
+                    <p class="fas fa-bell col-sm-2", style="color:#000"> ようこそ、<strong><%= current_user.name %></strong> さん！</p>
+                    <div class="col-xs-6 col-sm-2 headerNavBtn">
+                        <%= link_to "フォロー一覧", following_user_path(current_user), class: 'btn btn-outline-secondary fas fa-users nav-link text-dark' %>
+                    </div>
+                     <div class="col-xs-6 col-sm-2 headerNavBtn">
+                        <%= link_to "マイページ", user_path(current_user), class: 'btn btn-outline-secondary fas fa-user nav-link text-dark' %>
+                    </div>
+                     <div class="col-xs-6 col-sm-2 headerNavBtn">
+                        　<%=link_to "ジム作成", new_room_path, class: 'btn btn-outline-secondary fas fa-plus-square nav-link text-dark' %>
+                      </div>
+                       <div class="col-xs-6 col-sm-2 headerNavBtn">
+                         <%= link_to "ジム一覧", rooms_path, class: 'btn btn-outline-secondary fas fa-dumbbell nav-link text-dark' %>
+                       </div>
+                    <div class="col-xs-6 col-sm-2 headerNavBtn">
+                      <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary fas fa-sign-out-alt nav-link text-dark' %>
+                    </div>
+                     <div class="mx-auto">
+                       <%= form_with url: searchs_rooms_path, method: :get, local:true do |f| %>
+                        <%= f.text_field :search, :placeholder =>"ジムを検索" %>
+                        <%= f.submit "検索", class:"btn btn-info" %>
+                        <% end %>
+                     </div>
+                <% else %>
+                   <div class="col-xs-6 col-sm-2 headerNavBtn">
+                   <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-outline-secondary fas fa-user nav-link text-dark' %>
+                 </div>
+                  <div class="col-xs-6 col-sm-2 headerNavBtn">
+                    <%= link_to "ログイン", new_user_session_path, class: 'btn btn-outline-secondary fas fa-user nav-link text-dark' %>
+                  </div>
+                <% end %>
+                </div>
+            </div>
+        </div>
