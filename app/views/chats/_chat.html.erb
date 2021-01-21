@@ -2,7 +2,7 @@
 <div class="message_<%= chat.id %>">
  <% if chat.user == current_user %>
      <div id=chat_btn_"<%= chat.id %>">
-      <%= link_to "コメントを削除", room_chat_path(chat.room, chat), method: :delete, remote: true, class:"delete-btn btn btn-danger", "data-confirm" => "コメントを削除しますか？(他の人にはすぐには反映されません)" %>
+      <%= link_to "コメントを削除", room_chat_path(chat.room, chat), method: :delete, class:"delete-btn btn btn-danger", "data-confirm" => "コメントを削除しますか？(他の人にはすぐには反映されません)" %>
      </div>
    <% end %>
  <div class="mt-2">

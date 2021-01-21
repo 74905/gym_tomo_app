@@ -12,8 +12,8 @@ class ChatsController < ApplicationController
     @chat = Chat.new
   end
   
-
-  
+  def destroy
+  end
    private
     def chat_params
       params.require(:chat).permit(:message, :room_id)
