@@ -1,1 +1,21 @@
-<h1>ログイン成功です</h1>
+<div class="container ">
+  <div class="row">
+    <h1 class="col-12 mt-5 text-center">こんにちは！</h1>
+  </div>
+  
+     <div class="row">
+       <h2 class="col-12 text-center">ジムトモはジムでのコミュケーションを目的とした</h2>
+        <h2 class="col-12 text-center">シンプルなチャットアプリケーションです！</h2>
+     </div>
+       
+         <div class="row">
+          <%= image_tag 'speak.png', :size => '200x200', class:"col-3 mx-auto" %>
+         </div>
+         
+        <div class="row">
+          <%= link_to "早速始める！", new_user_registration_path, class:"col-3 mx-auto mt-3 btn btn-success" %>
+        </div>
+        <div class="row">
+          <%= link_to "ジムトモとは？",  home_about_path, class:" col-3 mx-auto mt-3 btn btn-info" %>
+        </div>
+</div>

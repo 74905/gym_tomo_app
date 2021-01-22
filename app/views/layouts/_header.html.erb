@@ -35,11 +35,17 @@
                         <% end %>
                      </div>
                 <% else %>
-                   <div class="col-xs-6 col-sm-2 headerNavBtn">
+                   <div class="col-xs-6 col-sm-3 headerNavBtn">
                    <%= link_to "新規登録", new_user_registration_path, class: 'btn btn-outline-secondary fas fa-user nav-link text-dark' %>
                  </div>
-                  <div class="col-xs-6 col-sm-2 headerNavBtn">
+                  <div class="col-xs-6 col-sm-3 headerNavBtn">
                     <%= link_to "ログイン", new_user_session_path, class: 'btn btn-outline-secondary fas fa-user nav-link text-dark' %>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 headerNavBtn">
+                    <%= link_to "トップページ", root_path, class: 'btn btn-outline-secondary fas fa-user nav-link text-dark' %>
+                  </div>
+                  <div class="col-xs-6 col-sm-3 headerNavBtn">
+                    <%= link_to "ジムともについて", home_about_path,  class: 'btn btn-outline-secondary fas fa-user nav-link text-dark' %>
                   </div>
                 <% end %>
                 </div>
