@@ -48,6 +48,16 @@ height: 50px;
   font-size: 20px;
   color: green;
 }
+.headerNavBtn{
+    text-align:center;
+    height:3em;
+    line-height:3em;
+    color:#5F5F5F;
+    font-size:16px;
+}
+.headerNavBtn:hover{
+    background:#EEE;
+}
 body {
   height: 100%;
   margin: 0;
