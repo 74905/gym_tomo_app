@@ -10,6 +10,9 @@
              <div class="card-body mx-auto">
                <%= link_to "チャットに参加", room_chats_path(@room), class:"btn btn-success" %>
              </div>
+              <div class="card-body">
+                  このチャットルームには<%= @room.user_rooms.count %>人が在籍してます
+              </div>
          </div>
      </div>
         <div class="col-4">
