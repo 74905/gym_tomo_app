@@ -1,20 +1,22 @@
- <main class="user-mypage">
+ <div class="user-mypage">
   <h1><%= @user.name %>さんのプロフィール</h1>
-  <div class="col-4 mx-auto mb-4">
-  <%= attachment_image_tag @user, :profile_image, format: 'png', fallback: "noimage.png", size: "400x400" %>
-  </div>
-  <div class="card mx-5 text-center">
-    <div class="card-header"></div>
-     <div class="card-body">
-      <h5 class="card-title">自己紹介文</h5>
-       <p class="card-text"><%= simple_format(@user.introduction) %></p>
-         <% if @user == current_user %>
-           <%= link_to "プロフィールを編集", edit_user_path(@user.id), class:"btn btn-primary" %>
-         <% else %>
-         <div id="follow_btn_<%= @user.id %>">
-           <%= render 'relationships/relationship', {user: @user} %>
-         </div>
-         <% end %>
-   </div>
-  </div>
- </main>
+  
+    <div class="col-4 mx-auto mb-4">
+      <%= attachment_image_tag @user, :profile_image, format: 'png', fallback: "noimage.png", size: "400x400" %>
+    </div>
+    
+    <div class="card mx-5 text-center">
+      <div class="card-header"></div>
+       <div class="card-body">
+        <h5 class="card-title">自己紹介文</h5>
+         <p class="card-text"><%= simple_format(@user.introduction) %></p>
+           <% if @user == current_user %>
+             <%= link_to "プロフィールを編集", edit_user_path(@user.id), class:"btn btn-primary" %>
+           <% else %>
+           <div id="follow_btn_<%= @user.id %>">
+             <%= render 'relationships/relationship', {user: @user} %>
+           </div>
+           <% end %>
+     </div>
+    </div>
+ </div>

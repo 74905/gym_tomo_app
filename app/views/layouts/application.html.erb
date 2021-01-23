@@ -12,6 +12,7 @@
 
   <body>
     <%= render "layouts/header" %>
+    <div class="main">
       <% if flash[:notice] %>
       <div id="notice" class="alert alert-info m-0">
         <%= notice %>
@@ -19,7 +20,7 @@
       </div>
      <% end %>
     <%= yield %>
-     <div class="push"></div>
+    </div>
       <footer class="text-dark border-top">
        <div class="container">
          <div class="row">
@@ -29,10 +30,5 @@
          </div>
       </div>
       </footer>
-    <script>
-    // document.addEventListener('turbolinks:before-visit', () => {
-    // window.referrer = window.location.href;
-    // }, false);
-    </script>
   </body>
 </html>

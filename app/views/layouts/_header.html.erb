@@ -12,22 +12,22 @@
                 <div class="row headerNavBox">
                     <!--会員がログインしたとき-->
                     <% if user_signed_in? %>
-                    <p class="fas fa-bell col-sm-2", style="color:#000"> ようこそ、<strong><%= current_user.name %></strong> さん！</p>
                     <div class="col-xs-6 col-sm-2 headerNavBtn">
-                        <%= link_to "フォロー一覧", following_user_path(current_user), class: 'btn btn-outline-secondary fas fa-users nav-link text-dark' %>
+                        <%= link_to "フォロー一覧", following_user_path(current_user), class: 'fas fa-users text-dark' %>
                     </div>
                      <div class="col-xs-6 col-sm-2 headerNavBtn">
-                        <%= link_to "マイページ", user_path(current_user), class: 'btn btn-outline-secondary fas fa-user nav-link text-dark' %>
+                        <%= link_to "マイページ", user_path(current_user), class: 'fas fa-user text-dark' %>
                     </div>
                      <div class="col-xs-6 col-sm-2 headerNavBtn">
-                        　<%=link_to "ジム作成", new_room_path, class: 'btn btn-outline-secondary fas fa-plus-square nav-link text-dark' %>
+                        　<%=link_to "ジム作成", new_room_path, class: 'fas fa-plus-square  text-dark' %>
                       </div>
                        <div class="col-xs-6 col-sm-2 headerNavBtn">
-                         <%= link_to "ジム一覧", rooms_path, class: 'btn btn-outline-secondary fas fa-dumbbell nav-link text-dark' %>
+                         <%= link_to "ジム一覧", rooms_path, class: 'fas fa-dumbbell text-dark' %>
                        </div>
                     <div class="col-xs-6 col-sm-2 headerNavBtn">
-                      <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary fas fa-sign-out-alt nav-link text-dark' %>
+                      <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt text-dark' %>
                     </div>
+                    <p class="fas fa-bell", style="color:#777777"> ようこそ、<strong><%= current_user.name %></strong> さん！</p>
                      <div class="mx-auto">
                        <%= form_with url: searchs_rooms_path, method: :get, local:true do |f| %>
                         <%= f.text_field :search, :placeholder =>"ジムを検索" %>

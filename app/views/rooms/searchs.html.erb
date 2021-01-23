@@ -1,4 +1,4 @@
-<main class="index-main">
+<div class="index-main">
 <div class="container">
     <h2><%= @search %>の検索結果は<%= @rooms.count %>件です</h2>
     <% if @rooms.count == 0 %>
@@ -26,4 +26,4 @@
  <%= paginate @rooms %>
  </div>
 </div>
-</main>
+</div>

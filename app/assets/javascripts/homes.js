@@ -1,5 +1,5 @@
 /*global $*/
-$(function(){
+document.addEventListener("turbolinks:load",function(){
 $('.faq-list-item').click(function(){
  var $answer = $(this).find('.answer');
  if($answer.hasClass('open')){
