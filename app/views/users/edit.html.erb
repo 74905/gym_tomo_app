@@ -1,8 +1,9 @@
 <h1>編集ページ</h1>
 
 <%= form_with model: @user, local:true do |f| %>
+<%= render "layouts/error_message", model: f.object %>
  <div class="col-4 mx-auto mb-4">
-   <%= attachment_image_tag @user, :profile_image, format: 'png', fallback: "noimage.png", size: "400x400" %>
+   <%= attachment_image_tag @user, :profile_image, class:"attachment_user", format: 'png', fallback: "noimage.png", size: "400x400" %>
  </div>
   <div class="col-4 mx-auto mb-2">
 　　<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class:"btn btn-light" %>

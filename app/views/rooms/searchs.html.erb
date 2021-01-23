@@ -1,8 +1,7 @@
-<div class="index-main">
 <div class="container">
     <h2><%= @search %>の検索結果は<%= @rooms.count %>件です</h2>
     <% if @rooms.count == 0 %>
-       <p>ジムが作成されていないかもしれません!</br>
+       <p style="text-align: center;">ジムが作成されていないかもしれません!</br>
           是非ジムを登録してみましょう!</p>
     <% end %>
   <div class="row">
@@ -25,5 +24,4 @@
  <div class="row"> 
  <%= paginate @rooms %>
  </div>
-</div>
 </div>

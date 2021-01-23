@@ -15,38 +15,41 @@
                     <div class="col-xs-6 col-sm-2 headerNavBtn">
                         <%= link_to "フォロー一覧", following_user_path(current_user), class: 'fas fa-users text-dark' %>
                     </div>
-                     <div class="col-xs-6 col-sm-2 headerNavBtn">
-                        <%= link_to "マイページ", user_path(current_user), class: 'fas fa-user text-dark' %>
-                    </div>
-                     <div class="col-xs-6 col-sm-2 headerNavBtn">
-                        　<%=link_to "ジム作成", new_room_path, class: 'fas fa-plus-square  text-dark' %>
-                      </div>
-                       <div class="col-xs-6 col-sm-2 headerNavBtn">
-                         <%= link_to "ジム一覧", rooms_path, class: 'fas fa-dumbbell text-dark' %>
+                        <div class="col-xs-6 col-sm-2 headerNavBtn">
+                            <%= link_to "フォロワー一覧", followers_user_path(current_user), class: 'fas fa-users text-dark' %>
+                        </div>
+                             <div class="col-xs-6 col-sm-2 headerNavBtn">
+                                <%= link_to "マイページ", user_path(current_user), class: 'fas fa-user text-dark' %>
+                            </div>
+                                 <div class="col-xs-6 col-sm-2 headerNavBtn">
+                                    　<%=link_to "ジム作成", new_room_path, class: 'fas fa-plus-square  text-dark' %>
+                                          </div>
+                               <div class="col-xs-6 col-sm-2 headerNavBtn">
+                                 <%= link_to "ジム一覧", rooms_path, class: 'fas fa-dumbbell text-dark' %>
+                               </div>
+                            <div class="col-xs-6 col-sm-2 headerNavBtn">
+                              <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt text-dark' %>
+                            </div>
+                      <p class="fas fa-bell", style="color:#777777"> ようこそ、<strong><%= current_user.name %></strong> さん！</p>
+                       <div class="mx-auto">
+                         <%= form_with url: searchs_rooms_path, method: :get, local:true do |f| %>
+                          <%= f.text_field :search, :placeholder =>"ジムを検索" %>
+                          <%= f.submit "検索", class:"btn btn-info" %>
+                          <% end %>
                        </div>
-                    <div class="col-xs-6 col-sm-2 headerNavBtn">
-                      <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt text-dark' %>
-                    </div>
-                    <p class="fas fa-bell", style="color:#777777"> ようこそ、<strong><%= current_user.name %></strong> さん！</p>
-                     <div class="mx-auto">
-                       <%= form_with url: searchs_rooms_path, method: :get, local:true do |f| %>
-                        <%= f.text_field :search, :placeholder =>"ジムを検索" %>
-                        <%= f.submit "検索", class:"btn btn-info" %>
-                        <% end %>
-                     </div>
                 <% else %>
-                   <div class="col-xs-6 col-sm-3 headerNavBtn">
+                 <div class="col-xs-6 col-sm-3 headerNavBtn">
                    <%= link_to "新規登録", new_user_registration_path, class: 'fas fa-user text-dark' %>
                  </div>
-                  <div class="col-xs-6 col-sm-3 headerNavBtn">
-                    <%= link_to "ログイン", new_user_session_path, class: 'fas fa-user text-dark' %>
-                  </div>
-                  <div class="col-xs-6 col-sm-3 headerNavBtn">
-                    <%= link_to "トップページ", root_path, class: 'fas fa-user text-dark' %>
-                  </div>
-                  <div class="col-xs-6 col-sm-3 headerNavBtn">
-                    <%= link_to "ジムトモについて", home_about_path,  class: 'fas fa-user text-dark' %>
-                  </div>
+                      <div class="col-xs-6 col-sm-3 headerNavBtn">
+                        <%= link_to "ログイン", new_user_session_path, class: 'fas fa-user text-dark' %>
+                      </div>
+                        <div class="col-xs-6 col-sm-3 headerNavBtn">
+                          <%= link_to "トップページ", root_path, class: 'fas fa-user text-dark' %>
+                      </div>
+                <div class="col-xs-6 col-sm-3 headerNavBtn">
+                  <%= link_to "ジムトモについて", home_about_path,  class: 'fas fa-user text-dark' %>
+                </div>
                 <% end %>
                 </div>
             </div>
