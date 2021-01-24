@@ -6,7 +6,7 @@
            <%= attachment_image_tag @room, :image, format: 'png', fallback: "noimage.png", size: "703x500" %>
              <div class="card-body">
                 <h5 class="card-title"><%= @room.name %></h5>
-                 <p class="card-text"><%= @room.introduction %></p>
+                 <p class="card-text"><%= simple_format(@room.introduction) %></p>
              </div>
              <div class="card-body mx-auto">
                <%= link_to "チャットに参加", room_chats_path(@room), class:"btn btn-success" %>
@@ -71,5 +71,5 @@
     }
 </script>
  <script async defer
- src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+ src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY_JS'] %>&callback=initMap">
 </script>
