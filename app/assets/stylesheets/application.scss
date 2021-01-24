@@ -77,3 +77,80 @@ footer{
   bottom: 0; /*下に固定*/
   
 }
+
+.image1{
+  height: 300px;
+  width: 200px;
+  background-image: url("roni.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image2{
+  height: 300px;
+  width: 200px;
+  background-image: url("three.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image3{
+  height: 300px;
+  width: 200px;
+  background-image: url("unknown.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image4{
+  height: 300px;
+  width: 200px;
+  background-image: url("def.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image5{
+  height: 300px;
+  width: 200px;
+  background-image: url("frcoe.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image6{
+  height: 300px;
+  width: 200px;
+  background-image: url("yokokawa.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image7{
+  height: 300px;
+  width: 200px;
+  background-image: url("yamagishi.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image8{
+  height: 300px;
+  width: 200px;
+  background-image: url("tanino.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image9{
+  height: 300px;
+  width: 200px;
+  background-image: url("kitamura.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image10{
+  height: 300px;
+  width: 200px;
+  background-image: url("kinnikun.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}

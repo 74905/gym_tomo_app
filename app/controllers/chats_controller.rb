@@ -10,8 +10,7 @@ class ChatsController < ApplicationController
     user_rooms = UserRoom.create(user_id: current_user.id, room_id: room.id)
       @room = user_rooms.room 
     end
-    @chats = @room.chats  
-    @chat = Chat.new
+    @chats = @room.chats.last(100)
   end
   
   def destroy

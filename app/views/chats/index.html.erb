@@ -1,6 +1,7 @@
 <main class="chat-index-main">
   <div class="container">
-     <h2 style="text-align: center; margin-top: 3px; color: #00FF00;"><%= @room.name %>の筋肉会話室</h2> 
+     <h2 style="text-align: center; margin-top: 3px; text-shadow: 1px 2px 3px #808080;"><%= @room.name %>の筋肉会話室</h2></br>
+      <p style="text-align: center;">※最新のコメント100件が表示されます</p>
        <div style="text-align: right;"><%= link_to participants_room_path(@room.id), class:"btn btn-primary" do %>
             参加人数<%= @room.user_rooms.count %>
            <% end %></div>
