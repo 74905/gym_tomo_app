@@ -13,6 +13,7 @@
              </div>
               <div class="card-body">
                   このチャットルームには<%= @room.user_rooms.count %>人が在籍してます
+                  <%= link_to "ルームを編集", edit_room_path(@room), class:"btn btn-info ml-2 " %>
               </div>
          </div>
      </div>
