@@ -43,6 +43,13 @@ height: 50px;
     margin:0.5em auto;
     display:block;
 }
+.logo-image{
+  width: 180px;
+  height: 75px;
+  background-image: image-url("logo.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
 #notice {
   padding-left: 50px;
   font-size: 20px;
@@ -81,70 +88,70 @@ footer{
 .image1{
   height: 300px;
   width: 200px;
-  background-image: url("roni.png");
+  background-image: image-url("roni.png");
   background-size: 100% 100%;
   background-position: center;
 }
 .image2{
   height: 300px;
   width: 200px;
-  background-image: url("three.png");
+  background-image: image-url("three.png");
   background-size: 100% 100%;
   background-position: center;
 }
 .image3{
   height: 300px;
   width: 200px;
-  background-image: url("unknown.png");
+  background-image: image-url("unknown.png");
   background-size: 100% 100%;
   background-position: center;
 }
 .image4{
   height: 300px;
   width: 200px;
-  background-image: url("def.png");
+  background-image: image-url("def.png");
   background-size: 100% 100%;
   background-position: center;
 }
 .image5{
   height: 300px;
   width: 200px;
-  background-image: url("frcoe.png");
+  background-image: image-url("frcoe.png");
   background-size: 100% 100%;
   background-position: center;
 }
 .image6{
   height: 300px;
   width: 200px;
-  background-image: url("yokokawa.png");
+  background-image: image-url("yokokawa.png");
   background-size: 100% 100%;
   background-position: center;
 }
 .image7{
   height: 300px;
   width: 200px;
-  background-image: url("yamagishi.png");
+  background-image: image-url("yamagishi.png");
   background-size: 100% 100%;
   background-position: center;
 }
 .image8{
   height: 300px;
   width: 200px;
-  background-image: url("tanino.png");
+  background-image: image-url("tanino.png");
   background-size: 100% 100%;
   background-position: center;
 }
 .image9{
   height: 300px;
   width: 200px;
-  background-image: url("kitamura.png");
+  background-image: image-url("kitamura.png");
   background-size: 100% 100%;
   background-position: center;
 }
 .image10{
   height: 300px;
   width: 200px;
-  background-image: url("kinnikun.png");
+  background-image: image-url("kinnikun.png");
   background-size: 100% 100%;
   background-position: center;
 }

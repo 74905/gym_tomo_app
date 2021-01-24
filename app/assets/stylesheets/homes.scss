@@ -1,10 +1,12 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.logo-head {
-    width: 100%;
-    height: auto;
-    margin: 0;
+.speak-image{
+  height: 200px;
+  width: 300px;
+   background-size: contain;
+  background-image: image-url("speak.png");
+  background-position: center;
 }
 .faq-wrapper {
   background-color: #e6ecf0;
@@ -46,6 +48,5 @@
   padding: 5px 0px;
   margin-bottom: 15px;
   display: none;
-  
 }
 
