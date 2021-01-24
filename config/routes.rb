@@ -8,12 +8,11 @@ Rails.application.routes.draw do
   end
   resource :relationships, only: [:create, :destroy]
   resources :rooms, except: [:destroy] do
-    member do 
-      resources :chats, only: [:index]
-    end
-   mount ActionCable.server => '/cable'
+  resources :chats, only: [:index, :destroy]
+   get :searchs, on: :collection
+   get :participants, on: :member
   end
-  
+  mount ActionCable.server => '/cable'
   root to: "homes#top"
   get 'home/about' => 'homes#about'
 end

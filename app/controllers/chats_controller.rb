@@ -1,23 +1,23 @@
 class ChatsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
-    room = Room.find(params[:id])
+    room = Room.find(params[:room_id])
     user_rooms = UserRoom.find_by(user_id: current_user.id, room_id: room)
     unless user_rooms.nil?
       @room = user_rooms.room
     else
-      UserRoom.create(user_id: current_user.id, room_id: room.id)
-      @room = room 
+    user_rooms = UserRoom.create(user_id: current_user.id, room_id: room.id)
+      @room = user_rooms.room 
     end
-    @chats = @room.chats  
-    @chat = Chat.new
+    @chats = @room.chats.last(100)
   end
   
-  # def create
-  #   @chat = current_user.chats.new(chat_params)
-  #   @chat.save
-  #   redirect_to request.referer
-  # end
-  
+  def destroy
+   @chat = Chat.find_by(id: params[:id], room_id: params[:room_id])
+   @chat.destroy
+   redirect_to room_chats_path(params[:room_id])
+  end
    private
     def chat_params
       params.require(:chat).permit(:message, :room_id)

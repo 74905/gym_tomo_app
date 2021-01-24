@@ -16,3 +16,148 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+ 
+.field_with_errors {
+input {
+@extend .is-invalid;
+}
+}
+.form-group {
+.field_with_errors {
+label {
+font-size: 20px;
+font-weight: 500;
+}
+input {
+height: 50px;
+}
+}
+}
+.header{
+    border-top:3px solid #000;
+}
+.headerNav{
+  border-bottom:2px solid #000;
+}
+.logo{
+    margin:0.5em auto;
+    display:block;
+}
+.logo-image{
+  width: 180px;
+  height: 75px;
+  background-image: image-url("logo.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+#notice {
+  padding-left: 50px;
+  font-size: 20px;
+  color: green;
+}
+.headerNavBtn{
+    text-align:center;
+    height:3em;
+    line-height:3em;
+    color:#5F5F5F;
+    font-size:16px;
+}
+.headerNavBtn:hover{
+    background:#EEE;
+}
+.main {
+  width: 100%;
+  padding-bottom: 20px; 
+}
+body{
+  min-height: 100vh;
+  position: relative;/*←相対位置*/
+  padding-bottom: 80px;/*←footerの高さ*/
+  box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
+footer{
+ width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0;
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
+  
+}
+
+.image1{
+  height: 300px;
+  width: 200px;
+  background-image: image-url("roni.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image2{
+  height: 300px;
+  width: 200px;
+  background-image: image-url("three.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image3{
+  height: 300px;
+  width: 200px;
+  background-image: image-url("unknown.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image4{
+  height: 300px;
+  width: 200px;
+  background-image: image-url("def.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image5{
+  height: 300px;
+  width: 200px;
+  background-image: image-url("frcoe.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image6{
+  height: 300px;
+  width: 200px;
+  background-image: image-url("yokokawa.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image7{
+  height: 300px;
+  width: 200px;
+  background-image: image-url("yamagishi.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image8{
+  height: 300px;
+  width: 200px;
+  background-image: image-url("tanino.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image9{
+  height: 300px;
+  width: 200px;
+  background-image: image-url("kitamura.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.image10{
+  height: 300px;
+  width: 200px;
+  background-image: image-url("kinnikun.png");
+  background-size: 100% 100%;
+  background-position: center;
+}
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}

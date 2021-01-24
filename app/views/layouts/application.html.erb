@@ -12,15 +12,23 @@
 
   <body>
     <%= render "layouts/header" %>
+    <div class="main">
+      <% if flash[:notice] %>
+      <div id="notice" class="alert alert-info m-0">
+        <%= notice %>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      </div>
+     <% end %>
     <%= yield %>
-    
-      <footer class="text-dark">
-      <p class="mx-auto">© ジムトレ</p>
+    </div>
+      <footer class="text-dark border-top">
+       <div class="container">
+         <div class="row">
+           <div class="mx-auto">
+              <p>© ジムトモ</p>
+            </div>
+         </div>
+      </div>
       </footer>
-    <script>
-    document.addEventListener('turbolinks:before-visit', () => {
-    window.referrer = window.location.href;
-    }, false);
-    </script>
   </body>
 </html>
