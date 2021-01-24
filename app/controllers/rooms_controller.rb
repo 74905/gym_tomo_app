@@ -22,6 +22,20 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
   end
   
+  def edit
+    @room =Room.find(params[:id])
+  end
+  
+  def update
+  @room = Room.find(params[:id])
+   if @room.update(room_params)
+     flash[:notice] = "更新が無事完了しました"
+     redirect_to room_path(@room.id)
+   else
+     render :edit
+   end
+  end
+  
   def searchs
     @search = params[:search]
     rooms = Room.search(params[:search])
