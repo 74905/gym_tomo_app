@@ -4,10 +4,9 @@ class Room < ApplicationRecord
   has_many :chats, dependent: :destroy
   has_many :user_rooms, dependent: :destroy
   validates :name, presence: true
-  validates :zipcode, presence: true
+  validates :zipcode, presence: true, format: {with: /\A[0-9]{3}-[0-9]{4}\z/}
   validates :address, presence: true
-  VALID_PHONE_NUMBER_REGEX = /\A0(\d{1}[-(]?\d{4}|\d{2}[-(]?\d{3}|\d{3}[-(]?\d{2}|\d{4}[-(]?\d{1})[-)]?\d{4}\z|\A0[5789]0[-]?\d{4}[-]?\d{4}\z/ #こいつでハイフンありの固定電話
-  validates :phone_number, presence: true, format: { with: VALID_PHONE_NUMBER_REGEX }
+  validates :phone_number, presence: true
   
   attachment :image
   
