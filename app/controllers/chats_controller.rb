@@ -15,8 +15,12 @@ class ChatsController < ApplicationController
   
   def destroy
    @chat = Chat.find_by(id: params[:id], room_id: params[:room_id])
-   @chat.destroy
-   redirect_to room_chats_path(params[:room_id])
+   if @chat.user == current_user
+     @chat.destroy
+     redirect_to room_chats_path(params[:room_id])
+   else
+     redirect_to room_chats_path(params[:room_id])
+   end
   end
    private
     def chat_params
