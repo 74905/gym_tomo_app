@@ -11,7 +11,7 @@ document.addEventListener 'turbolinks:load', ->
      $('.chat_box').animate scrollTop: $('.chat_box')[0].scrollHeight
     # id = '#' + data['id']
     # $(id).remove()
-  speak: (chat) ->
+  speak: (chat, current_user) ->
     @perform 'speak', chat: chat
   
   # $(document).on 'keypress', '[data-behavior~=chat_speaker]', (event) ->
@@ -33,6 +33,6 @@ $(document).on 'keydown', '[data-behavior~=chat_speaker]', (event) ->
     event.preventDefault()
     
 $(document).on 'click', '.chat_submit', ->
-  App.chat.speak $('[data-behavior~=chat_speaker]').val()
+  App.chat.speak $('[data-behavior~=chat_speaker]').val(), $('[data-behavior~=current_user_speaker]').val()
   $('[data-behavior~=chat_speaker]').val('')
   event.preventDefault()

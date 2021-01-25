@@ -1,0 +1,9 @@
+
+[1mFrom:[0m /home/ec2-user/environment/gym-tomo/app/channels/chat_channel.rb:21 ChatChannel#render_chat:
+
+    [1;34m20[0m: [32mdef[0m [1;34mrender_chat[0m(chat, user_id)
+ => [1;34m21[0m:   binding.pry
+    [1;34m22[0m:   [1;34;4mApplicationController[0m.render_with_signed_in_user([1;34;4mUser[0m.find(user_id), [35mpartial[0m: [31m[1;31m'[0m[31mchats/chat[1;31m'[0m[31m[0m, [35mlocals[0m: { [35mchat[0m: chat})
+    [1;34m23[0m:   [1;34m#ここで追加したいHTMLのテンプレートをコントローラーからとってくる　レシーブの際にデータを取りに行かなくていい　追記　current_userが取れないので、コントローラーに新たに定義[0m
+    [1;34m24[0m: [32mend[0m
+
