@@ -1,6 +1,8 @@
 <div id="message_chat">
        <div class="chat_delete">
+     <% if chat.user == current_user %>
         <%= link_to "コメントを削除", room_chat_path(chat.room, chat), method: :delete, class:"delete-btn btn btn-danger", "data-confirm" => "コメントを削除しますか？(他の人のコメントは削除出来ません)" %>
+     <% end %>  
        </div>
    <div class="mt-2">
     <%= attachment_image_tag chat.user, :profile_image, format: 'png', fallback: "noimage.png", size: "40x40" %>

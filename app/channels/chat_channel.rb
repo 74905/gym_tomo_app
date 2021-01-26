@@ -16,12 +16,12 @@ class ChatChannel < ApplicationCable::Channel
   private
   
   def render_chat(chat)
-    ApplicationController.renderer.render( partial: 'chats/chat', locals: { chat: chat})
+    ApplicationController.renderer.render( partial: 'chats/chat', locals: { chat: chat, current_user: current_user})
     #ここで追加したいHTMLのテンプレートをコントローラーからとってくる　レシーブの際にデータを取りに行かなくていい　追記　current_userが取れないので、コントローラーに新たに定義
   end
   
   def render_chatother(chat)
-    ApplicationController.renderer.render( partial: 'chats/chatother', locals: { chat: chat})
+    ApplicationController.renderer.render( partial: 'chats/chatother', locals: { chat: chat, current_user: current_user})
     #ここで追加したいHTMLのテンプレートをコントローラーからとってくる　レシーブの際にデータを取りに行かなくていい　追記　current_userが取れないので、コントローラーに新たに定義
   end
   
