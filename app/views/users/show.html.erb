@@ -1,8 +1,8 @@
- <div class="user-mypage">
+ <div class="user_image">
   <h1 style="text-shadow: 1px 2px 3px #808080;"><%= @user.name %>さんのプロフィール</h1>
   
     <div class="col-4 mx-auto mb-4" stlye="border-radius: 50%;">
-      <%= attachment_image_tag @user, :profile_image, class:"attachment_user", format: 'png', fallback: "noimage.png", size: "400x400" %>
+      <%= attachment_image_tag @user, :profile_image, class:"user_image-attachment", format: 'png', fallback: "noimage.png", size: "400x400" %>
     </div>
     
     <div class="card mx-5 text-center">

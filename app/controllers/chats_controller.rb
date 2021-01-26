@@ -22,6 +22,7 @@ class ChatsController < ApplicationController
      redirect_to room_chats_path(params[:room_id])
    end
   end
+  
    private
     def chat_params
       params.require(:chat).permit(:message, :room_id)
