@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: async #asycだとアクセス数が多くなると不具合が発生する可能性があるので、いつかはredisかprosgatesqlに移行
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: gym-tomo_production
+  # url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  # channel_prefix: gym-tomo_production
