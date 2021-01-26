@@ -7,9 +7,15 @@ document.addEventListener 'turbolinks:load', ->
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-     $('#chats').append data['chat']
-     $('#chats').append data['current_user.id']
-     $('.chat_box').animate scrollTop: $('.chat_box')[0].scrollHeight
+     show_user = $('#show_user').data('show_user')
+     console.log data['chat_user']
+     console.log show_user
+     if data['chat_user'] == show_user
+      $('#chats').append data['chat']
+      $('.chat_box').animate scrollTop: $('.chat_box')[0].scrollHeight
+     else
+      $('#chats').append data['chatother']
+      $('.chat_box').animate scrollTop: $('.chat_box')[0].scrollHeight
   speak: (chat, current_user) ->
     @perform 'speak', chat: chat
   
