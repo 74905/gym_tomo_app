@@ -14,12 +14,6 @@ document.addEventListener 'turbolinks:load', ->
   speak: (chat, current_user) ->
     @perform 'speak', chat: chat
   
-  # $(document).on 'keypress', '[data-behavior~=chat_speaker]', (event) ->
-  # if event.keyCode is 13 # return = send
-  #   App.chat.speak event.target.value
-  #   event.target.value = ''
-  #   event.preventDefault()
-  
   # Viewの'[data-behavior~=room_speaker]'内のtextを引数に実行される
 # eventはここでは'[data-behavior~=room_speaker]'にあたる
 $(document).on 'keydown', '[data-behavior~=chat_speaker]', (event) ->
@@ -33,6 +27,6 @@ $(document).on 'keydown', '[data-behavior~=chat_speaker]', (event) ->
     event.preventDefault()
     
 $(document).on 'click', '.chat_submit', ->
-  App.chat.speak $('[data-behavior~=chat_speaker]').val(), $('[data-behavior~=current_user_speaker]').val()
+  App.chat.speak $('[data-behavior~=chat_speaker]').val()
   $('[data-behavior~=chat_speaker]').val('')
   event.preventDefault()
