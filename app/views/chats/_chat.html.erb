@@ -1,7 +1,7 @@
 
-<div class="message_<%= chat.id %>">
-   <% if chat.user == current_user %>
-       <div>
+<div id="message_chat">
+   <% if chat.user.id == current_user.id %>
+       <div class="chat_delete">
         <%= link_to "コメントを削除", room_chat_path(chat.room, chat), method: :delete, class:"delete-btn btn btn-danger", "data-confirm" => "コメントを削除しますか？(他の人のコメントは削除出来ません)" %>
        </div>
    <% else %>

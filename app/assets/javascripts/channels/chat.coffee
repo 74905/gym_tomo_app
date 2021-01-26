@@ -8,9 +8,8 @@ document.addEventListener 'turbolinks:load', ->
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
      $('#chats').append data['chat']
+     $('#chats').append data['current_user.id']
      $('.chat_box').animate scrollTop: $('.chat_box')[0].scrollHeight
-    # id = '#' + data['id']
-    # $(id).remove()
   speak: (chat, current_user) ->
     @perform 'speak', chat: chat
   
