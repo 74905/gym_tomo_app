@@ -7,6 +7,12 @@ document.addEventListener 'turbolinks:load', ->
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
+    if data['id']
+     id = ('#') + data['id']
+     console.log(id)
+     $(id).remove()
+   
+    else  
      show_user = $('#show_user').data('show_user')
      console.log data['chat_user']
      console.log show_user
@@ -16,7 +22,9 @@ document.addEventListener 'turbolinks:load', ->
      else
       $('#chats').append data['chatother']
       $('.chat_box').animate scrollTop: $('.chat_box')[0].scrollHeight
-  speak: (chat, current_user) ->
+  destroy: (id) ->
+    @perform 'destroy', id: id
+  speak: (chat) ->
     @perform 'speak', chat: chat
   
   # Viewの'[data-behavior~=room_speaker]'内のtextを引数に実行される
@@ -35,3 +43,6 @@ $(document).on 'click', '.chat_submit', ->
   App.chat.speak $('[data-behavior~=chat_speaker]').val()
   $('[data-behavior~=chat_speaker]').val('')
   event.preventDefault()
+
+$(document).on 'click', '.delete-btn', (event) ->
+    App.chat.destroy event.target.id

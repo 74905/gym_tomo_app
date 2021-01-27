@@ -13,6 +13,10 @@ class ChatChannel < ApplicationCable::Channel
       ActionCable.server.broadcast "chat_channel_#{params['room_id']}", chat: render_chat(chat), chatother: render_chatother(chat), chat_user: current_user.id
   end
   
+  def destroy(data)
+    Chat.find_by(id: data['id']).destroy
+   ActionCable.server.broadcast "chat_channel_#{params['room_id']}", id: data['id']
+  end
   private
   
   def render_chat(chat)
