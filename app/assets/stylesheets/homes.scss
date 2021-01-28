@@ -4,10 +4,35 @@
 .home_image{
   height: 200px;
   width: 300px;
-   background-size: contain;
+  background-size: contain;
   background-image: image-url("speak.png");
   background-position: center;
 }
+.home_about-image1{
+  height: 400px;
+  width: 350px;
+  background-size: cover;
+  background-image: image-url("about.png");
+  background-position: center;
+  border: inset 2px #0000ff;
+}
+.home_about-image2{
+  height: 400px;
+  width: 350px;
+  background-size: cover;
+  background-image: image-url("about2.png");
+  background-position: center;
+  border: inset 2px #0000ff;
+}
+.home_about-image3{
+  height: 400px;
+  width: 350px;
+  background-size: 130% 100%;
+  background-image: image-url("about3.png");
+  background-position: center;
+  border: inset 2px #0000ff;
+}
+
 .home_faq-wrapper {
   background-color: #e6ecf0;
   text-align: center;
