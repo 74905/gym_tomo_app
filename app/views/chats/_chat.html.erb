@@ -2,7 +2,7 @@
        <div class="chat_delete">
      <% if chat.user == current_user %>
         <%#= link_to "コメントを削除", room_chat_path(chat.room, chat), method: :delete, class:"delete-btn btn btn-danger", "data-confirm" => "コメントを削除しますか？(他の人のコメントは削除出来ません)" %>
-     <button id="<%= chat.id %>" class="delete-btn btn btn-danger" data-confirm="コメントを削除しますか？">コメントを削除</button>
+     <button id="<%= chat.id %>" class="delete-btn btn btn-danger">コメントを削除</button>
      <% end %>  
        </div>
      
