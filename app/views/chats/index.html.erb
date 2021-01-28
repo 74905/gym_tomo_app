@@ -6,6 +6,7 @@
             参加人数<%= @room.user_rooms.count %>
            <% end %></div>
    <div id="messages", data-room_id="<%= @room.id %>"></div>
+   <div id="show_user" data-show_user="<%= current_user.id %>"></div>
    <div class="chat_box">
    <div id="chats">
      <%= render @chats %>

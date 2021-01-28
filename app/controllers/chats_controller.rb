@@ -13,15 +13,15 @@ class ChatsController < ApplicationController
     @chats = @room.chats.last(100)
   end
   
-  def destroy
-   @chat = Chat.find_by(id: params[:id], room_id: params[:room_id])
-   if @chat.user == current_user
-     @chat.destroy
-     redirect_to room_chats_path(params[:room_id])
-   else
-     redirect_to room_chats_path(params[:room_id])
-   end
-  end
+  # def destroy　action cableで不具合があった時のために残しとく
+  # @chat = Chat.find_by(id: params[:id], room_id: params[:room_id])
+  # if @chat.user == current_user
+  #   @chat.destroy
+  #   redirect_to room_chats_path(params[:room_id])
+  # else
+  #   redirect_to room_chats_path(params[:room_id])
+  # end
+  # end
   
    private
     def chat_params
