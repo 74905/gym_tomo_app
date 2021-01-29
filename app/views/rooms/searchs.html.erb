@@ -2,7 +2,8 @@
     <h2><%= @search %>の検索結果は<%= @rooms.count %>件です</h2>
     <% if @rooms.count == 0 %>
        <p style="text-align: center;">ジムが作成されていないかもしれません!</br>
-          是非ジムを登録してみましょう!</p>
+          是非ジムを登録してみましょう!
+       </p>
     <% end %>
   <div class="row">
          <% @rooms.each do |room| %>
@@ -20,7 +21,7 @@
           </div>
          </div>
          <% end %>
- </div>
+  </div>
      <div class="row"> 
         <%= paginate @rooms %>
      </div>
