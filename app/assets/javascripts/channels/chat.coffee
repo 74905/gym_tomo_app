@@ -1,48 +1,34 @@
-document.addEventListener 'turbolinks:load', ->
- App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room_id: $('#messages').data('room_id') },
-  connected: ->
+ App.chat = App.cable.subscriptions.create { channel: "ChatChannel", room_id: location.pathname.replace(/[^0-9]/g,'') },
+   connected: ->
     # Called when the subscription is ready for use on the server
-  disconnected: ->
+   disconnected: ->
     # Called when the subscription has been terminated by the server
 
-  received: (data) ->
+   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
     if data['id']
      id = ('#') + data['id']
-     console.log(id)
      $(id).remove()
    
     else  
      show_user = $('#show_user').data('show_user')
-     console.log data['chat_user']
-     console.log show_user
      if data['chat_user'] == show_user
       $('#chats').append data['chat']
       $('.chat_box').animate scrollTop: $('.chat_box')[0].scrollHeight
      else
       $('#chats').append data['chatother']
       $('.chat_box').animate scrollTop: $('.chat_box')[0].scrollHeight
-  destroy: (id) ->
+   destroy: (id) ->
     @perform 'destroy', id: id
-  speak: (chat) ->
-    @perform 'speak', chat: chat
+   speak: (chat) ->
+    @perform 'speak', chat: chat, room_id: $('#messages').data('room_id')
   
-  # Viewの'[data-behavior~=room_speaker]'内のtextを引数に実行される
-# eventはここでは'[data-behavior~=room_speaker]'にあたる
-$(document).on 'keydown', '[data-behavior~=chat_speaker]', (event) ->
-  # Ctrl + returnキーを押すとここで上のApp.roomの:speakが呼ばれる
-  if event.ctrlKey && event.keyCode is 13
-    # 引数eventのvalueをspeakアクションに渡す
-    App.chat.speak event.target.value
-    # eventのvalueを初期化
-    event.target.value = ''
-    # 中身をsubmitしない
-    event.preventDefault()
     
-$(document).on 'click', '.chat_submit', ->
+ $(document).on 'click', '.chat_submit', (event) ->
+  #App.chat.speak event.target.value
   App.chat.speak $('[data-behavior~=chat_speaker]').val()
   $('[data-behavior~=chat_speaker]').val('')
   event.preventDefault()
 
-$(document).on 'click', '.delete-btn', (event) ->
+ $(document).on 'click', '.delete-btn', (event) ->
     App.chat.destroy event.target.id

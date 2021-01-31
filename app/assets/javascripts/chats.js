@@ -1,4 +1,20 @@
 /*global $*/
+
+// function doReloadWithCache() {
+ 
+//     // キャッシュを利用してリロード
+//     window.location.reload(false);
+ 
+// }
+ 
+// window.addEventListener('load', function () {
+ 
+//     // ページ表示完了した5秒後にリロード
+//     setTimeout(doReloadWithCache, 10000);
+ 
+// });
+
+
 document.addEventListener("turbolinks:load", function() {
   var $textarea = $('#message_hoge');
   var lineHeight = parseInt($textarea.css('lineHeight'));

@@ -1,10 +1,19 @@
 <div class="message_chat" id=<%= chat.id %>>
-   <div class="mt-2">
-    <%= attachment_image_tag chat.user, :profile_image, format: 'png', fallback: "noimage.png", size: "40x40" %>
-    <%= chat.user.name %>
+  <div class="fukidasi">
+    
+     <div style="text-align: left;">
+      <%= chat.user.name %>
+     </div>
+    
+     <div class="faceicon" style="border-radius: 50%;">
+     <%= attachment_image_tag chat.user, :profile_image, class:"user_image-attachment", format: 'png', fallback: "noimage.png", size: "40x40" %>
+     </div>
+     
+      <div class="chatting">
+       <div class="says">
+        <%= simple_format(chat.message) %></br>
+       </div>
+       <%= chat.created_at.strftime('%Y-%m-%d %H:%M') %>
+      </div>
    </div>
-   
-    <div class="border-bottom ml-5">
-     <%= simple_format(chat.message) %>
-    </div>
 </div>

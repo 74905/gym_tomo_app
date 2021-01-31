@@ -7,12 +7,14 @@
                  resource: resource.class.model_name.human.downcase)
        %>
     </h2>
+    
     <ul>
       <% resource.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       <button type="button" class="close" data-dismiss="alert">&times;</button>
     </ul>
+    
   </div>
  </div>
 <% end %>

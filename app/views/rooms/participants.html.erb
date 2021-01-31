@@ -1,5 +1,6 @@
 <h2><%= @room.name %>の参加者一覧</h2>
 <table class="table table-striped table-inverse">
+  
   <thead>
     <tr>
       <th>プロフィール画像</th>
@@ -8,6 +9,7 @@
       <th>ユーザーページ</th>
     </tr>
   </thead>
+  
   <tbody>
     <% @user_rooms.each do |user_room| %>
     <tr>
