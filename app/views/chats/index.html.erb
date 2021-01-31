@@ -6,7 +6,7 @@
             参加人数<%= @room.user_rooms.count %>
            <% end %>
         </div>
-         <div id="messages", data-room_id="<%= @room.id %>"></div>
+         <div id="messages", data-room_id="<%= @room.id %>" ></div>
          <div id="show_user" data-show_user="<%= current_user.id %>"></div>
          <div class="chat_box">
          <div id="chats">
@@ -17,8 +17,7 @@
         <div class="col-8 mx-auto">
            <div id="outer_box">
                <div class="form-group">
-              <%#= text_area :message, "hoge", 'data-behavior': 'chat_speaker', class: 'from-control', style: 'margin-bottom: 20px; width: 100%;' %>
-               <textarea data-behavior="chat_speaker" class="from-control" style="margin-bottom: 20px; width: 100%; height: 86px;" name="message[hoge]" id="message_hoge"></textarea>
+               <textarea type="text" data-behavior="chat_speaker" class="from-control" style="margin-bottom: 20px; width: 100%; height: 86px;" name="message[hoge]" id="message_hoge"></textarea>
               </div>
            </div>
         </div>
