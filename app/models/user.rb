@@ -27,7 +27,19 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
-  def is_member?(room_id)
-    Room.find(room_id).users.exists?(self.id)
+  
+  # def is_member?(room_id)
+  #   Room.find(room_id).users.exists?(self.id)
+  # end
+  def self.gesut
+     find_or_create_by!(email: "guest@example.com", name: "ボディビル君") do |user|
+      user.password = SecureRandom.urlsafe_base64
+     end
+  end
+  
+  def self.gesut2
+    find_or_create_by!(email: "guest2@example.com", name: "フィジーク君") do |user|
+      user.password = SecureRandom.urlsafe_base64
+     end
   end
 end
