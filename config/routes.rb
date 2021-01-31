@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_scope :user do
+    post "users/guest_sign_in", to: "users/sessions#new_gesut"
+    post "users/guest2_sign_in", to: "users/sessions#new_gesut2"
+  end
+    
   resources :users, only: [:show, :edit, :update] do
     member do 
        get :following, :followers
