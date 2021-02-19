@@ -7,6 +7,7 @@ class Room < ApplicationRecord
   validates :zipcode, presence: true, format: {with: /\A[0-9]{3}-[0-9]{4}\z/}
   validates :address, presence: true
   validates :phone_number, presence: true
+
   
   attachment :image
   
