@@ -93,5 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false #ここの指定でactioncaleのサーバーが働く
   ActionCable.server.config.disable_request_forgery_protection = true
   config.action_cable.url = 'ws://18.179.104.10/cable'
-  config.action_cable.allowed_request_origins = [ 'https://18.179.104.10' ] 
+  config.action_cable.allowed_request_origins = [ 'http://18.179.104.10' ] 
 end
